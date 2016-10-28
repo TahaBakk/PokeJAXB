@@ -61,7 +61,6 @@ import javax.xml.bind.annotation.*;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "PokemonType", propOrder = {
     "nombre",
-    "Classe",
     "pv",
     "ataque1",
     "ataque2",
@@ -71,8 +70,8 @@ public class PokemonType {
 
     @XmlElement(name = "Nombre", required = true)
     protected String nombre;
-    @XmlAttribute(name = "Classe")
-    protected String Classe;
+    /*@XmlAttribute(name = "Classe")
+    protected String Classe;*/
     @XmlElement(name = "PV", required = true)
     protected String pv;
     @XmlElement(name = "Ataque1", required = true)
@@ -82,7 +81,7 @@ public class PokemonType {
     @XmlElement(name = "Etapa", required = true)
     protected String etapa;
 
-    public String getClasse() {return Classe;}
+    /*public String getClasse() {return Classe;}*/
 
     /**
      * Sets the value of the nombre property.
@@ -92,9 +91,9 @@ public class PokemonType {
      *     {@link NombreType }
      *
      */
-    public void setClasse(String value) {
+  /*  public void setClasse(String value) {
         this.Classe = value;
-    }
+    }*/
 
     /**
      * Gets the value of the pv property.
