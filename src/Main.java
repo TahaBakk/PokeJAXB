@@ -15,7 +15,7 @@ public class Main {
 
         public static void main(String[] args) {
                 mostrar();
-                //afegirPokemon();
+                afegirPokemon();
         }
 
 
@@ -23,22 +23,9 @@ public class Main {
 
                 File f1 = new File("pokemons.xml");
 
-                /*PokemonType pkt = new PokemonType();
-                NombreType nt = new NombreType();
-
-
-                pkt.setNombre("Reshidam");
-                nt.setClasse("Fuego");
-                pkt.setPV("130");
-                pkt.setAtaque1("Enfadado");
-                pkt.setAtaque2("Llama azul");
-                pkt.setEtapa("Legendario");
-                */
-
                 try {
 
-                        JAXBContext context = null;
-                        context = JAXBContext.newInstance(PokedexType.class);
+                        JAXBContext context = JAXBContext.newInstance(PokedexType.class);
 
                         Unmarshaller um = context.createUnmarshaller();
                         PokedexType pdt = (PokedexType) um.unmarshal(f1);
@@ -47,9 +34,9 @@ public class Main {
                         System.out.println("Hi ha" +pdt.getPokemon().size()+" pokemons\n");
 
                         for (int i = 0; i < pdt.getPokemon().size(); i++) {
-                                System.out.println("Nombre del pokemon: "+ pdt.getPokemon().get(i).getNombre());
-                                System.out.println("La classe es: ");
-                                System.out.println("El PV es: "+ pdt.getPV());
+                                System.out.println("Nombre del pokemon: "+ pdt.getPokemon().get(i).getNombre().getValue());
+                                System.out.println("La classe es: "+pdt.getPokemon().get(i).getNombre().getClasse());
+                                System.out.println("El PV es: "+ pdt.getPokemon().get(i).getPV());
                                 System.out.println("Primero ataque: "+ pdt.getPokemon().get(i).getAtaque1());
                                 System.out.println("Segundo ataque: "+ pdt.getPokemon().get(i).getAtaque2());
                                 System.out.println("Fase: "+ pdt.getPokemon().get(i).getEtapa()+"\n");
@@ -70,7 +57,8 @@ public class Main {
 
                 PokemonType pkt = new PokemonType();
 
-                pkt.setNombre("Reshidam");
+                pkt.getNombre().setValue("Reshidam");
+                pkt.getNombre().setClasse("Fuego");
                 pkt.setPV("130");
                 pkt.setAtaque1("Enfadado");
                 pkt.setAtaque2("Llama azul");

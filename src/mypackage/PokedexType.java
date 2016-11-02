@@ -4,9 +4,7 @@ package mypackage;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+
 
 /**
  * <p>Java class for PokedexType complex type.
@@ -31,7 +29,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "PokedexType", propOrder = {
     "pokemon"
 })
-@XmlRootElement(name = "Pokedex")
+@XmlRootElement(name="Pokedex")
 public class PokedexType {
 
     @XmlElement(name = "Pokemon")

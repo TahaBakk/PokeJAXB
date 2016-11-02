@@ -1,7 +1,10 @@
 
 package mypackage;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
@@ -69,9 +72,7 @@ import javax.xml.bind.annotation.*;
 public class PokemonType {
 
     @XmlElement(name = "Nombre", required = true)
-    protected String nombre;
-    /*@XmlAttribute(name = "Classe")
-    protected String Classe;*/
+    protected NombreType nombre;
     @XmlElement(name = "PV", required = true)
     protected String pv;
     @XmlElement(name = "Ataque1", required = true)
@@ -81,29 +82,6 @@ public class PokemonType {
     @XmlElement(name = "Etapa", required = true)
     protected String etapa;
 
-    /*public String getClasse() {return Classe;}*/
-
-    /**
-     * Sets the value of the nombre property.
-     *
-     * @param value
-     *     allowed object is
-     *     {@link NombreType }
-     *
-     */
-  /*  public void setClasse(String value) {
-        this.Classe = value;
-    }*/
-
-    /**
-     * Gets the value of the pv property.
-     *
-     * @return
-     *     possible object is
-     *     {@link String }
-     *
-     */
-
     /**
      * Gets the value of the nombre property.
      * 
@@ -112,7 +90,7 @@ public class PokemonType {
      *     {@link NombreType }
      *     
      */
-    public String getNombre() {
+    public NombreType getNombre() {
         return nombre;
     }
 
@@ -124,7 +102,7 @@ public class PokemonType {
      *     {@link NombreType }
      *     
      */
-    public void setNombre(String value) {
+    public void setNombre(NombreType value) {
         this.nombre = value;
     }
 
