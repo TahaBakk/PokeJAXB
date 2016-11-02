@@ -1,3 +1,4 @@
+import mypackage.NombreType;
 import mypackage.PokedexType;
 import mypackage.PokemonType;
 
@@ -38,12 +39,14 @@ public class Main {
 
                         Unmarshaller um = context.createUnmarshaller();
                         PokedexType pdt = (PokedexType) um.unmarshal(f1);
+                        //NombreType nt = (NombreType) um.unmarshal(f1);
 
                         System.out.println("Hi ha" +pdt.getPokemon().size()+" pokemons\n");
 
                         for (int i = 0; i < pdt.getPokemon().size(); i++) {
                                 System.out.println("Nombre del pokemon: "+ pdt.getPokemon().get(i).getNombre());
-                                System.out.println("La classe es: "+ pdt.getPokemon().get(i).getClasse().toString());
+                                //System.out.println("La classe es: "+ pdt.getPokemon().get(i).getClasse().toString());
+                                //System.out.println("La classe es: "+nt.getClasse().toString() );
                                 System.out.println("El PV es: "+ pdt.getPokemon().get(i).getPV());
                                 System.out.println("Primero ataque: "+ pdt.getPokemon().get(i).getAtaque1());
                                 System.out.println("Segundo ataque: "+ pdt.getPokemon().get(i).getAtaque2());
