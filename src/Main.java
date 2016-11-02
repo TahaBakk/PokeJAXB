@@ -14,7 +14,7 @@ import java.io.File;
 public class Main {
 
         public static void main(String[] args) {
-                mostrar();
+                //mostrar();
                 afegirPokemon();
         }
 
@@ -66,11 +66,11 @@ public class Main {
 
                 try {
 
-                        JAXBContext context = null;
-                        context = JAXBContext.newInstance(PokedexType.class);
+                        JAXBContext context = JAXBContext.newInstance(PokedexType.class);
 
                         Unmarshaller um = context.createUnmarshaller();
                         PokedexType pdt = (PokedexType) um.unmarshal(f1);
+
 
                         pdt.getPokemon().add(pkt);
 
@@ -100,10 +100,6 @@ public class Main {
 
 
         }
-
-
-
-
 
 
 }
