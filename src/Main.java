@@ -54,11 +54,12 @@ public class Main {
         public static void afegirPokemon(){
 
                 File f1 = new File("pokemons.xml");
-
+                NombreType nt = new NombreType();
                 PokemonType pkt = new PokemonType();
 
-                pkt.getNombre().setValue("Reshidam");
-                pkt.getNombre().setClasse("Fuego");
+                nt.setValue("Reshidam");
+                nt.setClasse("fuego");
+                pkt.setNombre(nt);
                 pkt.setPV("130");
                 pkt.setAtaque1("Enfadado");
                 pkt.setAtaque2("Llama azul");

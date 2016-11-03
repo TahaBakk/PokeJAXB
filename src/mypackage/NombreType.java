@@ -34,6 +34,7 @@ public class NombreType {
     @XmlAttribute(name = "Classe")
     protected String classe;
 
+
     /**
      * Gets the value of the value property.
      * 
