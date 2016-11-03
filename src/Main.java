@@ -97,8 +97,8 @@ public class Main {
         }
 
         public static void guardar(PokedexType pdt){
-                //HEM GUARDA EL FITXER EN TahaPokemon.xml
-                File flg =new File("TahaPokemon.xml");
+
+                File flg =new File("pokemons.xml");
 
                 try {
                         //Aquet apartat es per escriure totes le dades del xml al nou xml
