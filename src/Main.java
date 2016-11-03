@@ -37,9 +37,9 @@ public class Main {
                                 System.out.println("Nombre del pokemon: "+ pdt.getPokemon().get(i).getNombre().getValue());
                                 System.out.println("La classe es: "+pdt.getPokemon().get(i).getNombre().getClasse());
                                 System.out.println("El PV es: "+ pdt.getPokemon().get(i).getPV());
-                                System.out.println("Primero ataque: "+ pdt.getPokemon().get(i).getAtaque1());
+                                System.out.println("Primer ataque: "+ pdt.getPokemon().get(i).getAtaque1());
                                 System.out.println("Segundo ataque: "+ pdt.getPokemon().get(i).getAtaque2());
-                                System.out.println("Fase: "+ pdt.getPokemon().get(i).getEtapa()+"\n");
+                                System.out.println("Fase: "+ pdt.getPokemon().get(i).getEtapa()+"\n\n");
 
                         }
 
