@@ -7,6 +7,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
+import java.util.Scanner;
 
 /**
  * Created by x3727349s on 27/10/16.
@@ -59,7 +60,20 @@ public class Main {
                 NombreType nt = new NombreType();
                 PokemonType pkt = new PokemonType();
                 //afegim la classe i el nom despres afegim en setnombre
+
+                Scanner sc = new Scanner(System.in);
                 nt.setValue("Reshidam");
+                nt.setClasse("fuego");
+                pkt.setNombre(nt);
+                pkt.setPV("130");
+                pkt.setAtaque1("Enfadado");
+                pkt.setAtaque2("Llama azul");
+                pkt.setEtapa("Legendario");
+
+                System.out.println("Escriu el nom del pokemon: ");
+                nt.setValue(sc.nextLine());
+                System.out.println("Escriu el nom del pokemon: ");
+
                 nt.setClasse("fuego");
                 pkt.setNombre(nt);
                 pkt.setPV("130");
