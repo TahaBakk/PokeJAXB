@@ -57,29 +57,26 @@ public class Main {
 
                 File f1 = new File("pokemons.xml");
                 //he creat nt per a poder afegir la classe i el valor
+                // i despres afegim el nt al pkt per poder afegirlo xml
                 NombreType nt = new NombreType();
                 PokemonType pkt = new PokemonType();
-                //afegim la classe i el nom despres afegim en setnombre
 
                 Scanner sc = new Scanner(System.in);
-                nt.setValue("Reshidam");
-                nt.setClasse("fuego");
-                pkt.setNombre(nt);
-                pkt.setPV("130");
-                pkt.setAtaque1("Enfadado");
-                pkt.setAtaque2("Llama azul");
-                pkt.setEtapa("Legendario");
 
+                //afegim la classe i el nom despres afegim en setnombre
                 System.out.println("Escriu el nom del pokemon: ");
                 nt.setValue(sc.nextLine());
-                System.out.println("Escriu el nom del pokemon: ");
-
-                nt.setClasse("fuego");
+                System.out.println("Escriu la seva classe: ");
+                nt.setClasse(sc.nextLine());
                 pkt.setNombre(nt);
-                pkt.setPV("130");
-                pkt.setAtaque1("Enfadado");
-                pkt.setAtaque2("Llama azul");
-                pkt.setEtapa("Legendario");
+                System.out.println("El PV: ");
+                pkt.setPV(sc.nextLine());
+                System.out.println("El seu primer atac: ");
+                pkt.setAtaque1(sc.nextLine());
+                System.out.println("El seu segon atac:: ");
+                pkt.setAtaque2(sc.nextLine());
+                System.out.println("La seva etapa: ");
+                pkt.setEtapa(sc.nextLine());
 
                 try {
 
