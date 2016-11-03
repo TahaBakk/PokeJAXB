@@ -14,13 +14,14 @@ import java.io.File;
 public class Main {
 
         public static void main(String[] args) {
-                mostrar();
-                afegirPokemon();
+            //cridem el metodes
+            mostrar();
+            afegirPokemon();
         }
 
 
         public static void mostrar(){
-
+                //pasem el fitxer a un file
                 File f1 = new File("pokemons.xml");
 
                 try {
@@ -30,7 +31,7 @@ public class Main {
                         Unmarshaller um = context.createUnmarshaller();
                         PokedexType pdt = (PokedexType) um.unmarshal(f1);
 
-
+                        //mostra quants pokemons hi ha en la llista
                         System.out.println("Hi ha" +pdt.getPokemon().size()+" pokemons\n");
 
                         for (int i = 0; i < pdt.getPokemon().size(); i++) {
@@ -54,9 +55,10 @@ public class Main {
         public static void afegirPokemon(){
 
                 File f1 = new File("pokemons.xml");
+                //he creat nt per a poder afegir la classe i el valor
                 NombreType nt = new NombreType();
                 PokemonType pkt = new PokemonType();
-
+                //afegim la classe i el nom despres afegim en setnombre
                 nt.setValue("Reshidam");
                 nt.setClasse("fuego");
                 pkt.setNombre(nt);
@@ -72,28 +74,27 @@ public class Main {
                         Unmarshaller um = context.createUnmarshaller();
                         PokedexType pdt = (PokedexType) um.unmarshal(f1);
 
-
+                        //afegim els valors afegits al array de la pokedex
                         pdt.getPokemon().add(pkt);
-
+                        //cridem la funcion pero guardar
                         guardar(pdt);
 
                 } catch (JAXBException e) {
                         e.printStackTrace();
                 }
 
-
         }
 
         public static void guardar(PokedexType pdt){
-
-                File flg =new File("pokemon2.xml");
+                //HEM GUARDA EL FITXER EN TahaPokemon.xml
+                File flg =new File("TahaPokemon.xml");
 
                 try {
+                        //Aquet apartat es per escriure totes le dades del xml al nou xml
                         JAXBContext context = JAXBContext.newInstance(PokedexType.class);
                         Marshaller n = (context.createMarshaller());
                         n.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
-                        n.marshal(pdt,flg);
-
+                        n.marshal(pdt,flg);//Aqui li diem que el fitxer pdt el pasarem al result amb tots el canvis, el fitxer si existeix és sobreescriu.
 
                 } catch (JAXBException e) {
                         e.printStackTrace();
